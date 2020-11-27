@@ -37,7 +37,7 @@
         </container>
         <footer>
             <div class="bottom-footer">
-                <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
+                <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
             </div>
         </footer>
         <script>

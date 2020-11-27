@@ -32,18 +32,19 @@
             <table class="table_data">
                 <thead>
                     <tr>
-                        <th scope="col" class="column-primary" data-header="DATA"></th>
+                        <th scope="col" class="column-primary" data-header="Data"></th>
                         <th scope="col">Nama Event</th>
                         <th scope="col">Tempat</th>
                         <th scope="col">Tanggal</th>
                         <th scope="col">Waktu</th>
                         <th scope="col">Harga</th>
+                        <th scope="col">URL GMaps</th>
                         <th scope="col">Nomor</th>
                         <th scope="col">Email</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Diperbarui</th>
-                        <th scope="col" class="column-primary">OPSI</th>
+                        <th scope="col" class="column-primary">Opsi</th>
                     </tr>
                 </thead>
                 @foreach($events as $e)
@@ -55,6 +56,7 @@
                         <td data-header="Tanggal">{{ $e -> tanggal }}</td>
                         <td data-header="Waktu">{{ $e -> waktu }}</td>
                         <td data-header="Harga">{{ $e -> harga }}</td>
+                        <td data-header="URL Gmaps">{{ $e -> urlmap }}</td>
                         <td data-header="Nomor">{{ $e -> nomor }}</td>
                         <td data-header="Email">{{ $e -> email }}</td>
                         <td data-header="Foto">{{ $e -> foto }}</td>
@@ -72,7 +74,7 @@
         </section>
     <footer>
         <div class="bottom-footer">
-            <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
+            <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

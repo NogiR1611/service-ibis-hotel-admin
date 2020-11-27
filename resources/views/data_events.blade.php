@@ -38,6 +38,8 @@
             <input type="text" name="waktu" value="{{ old('waktu') }}" required="required"></br>
             <label>Harga : </label></br>
             <input type="text" name="harga" value="{{ old('harga') }}" required="required"></br>
+            <label>Link Google Map : </label><br>
+            <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
             <label>Foto : </label></br>
             <input type="file" action="/upload" value="{{ old('foto') }}" name="foto" id="foto" required="required"></br>
             <label>Nomor Kontak : </label></br>
@@ -51,7 +53,7 @@
     </div>
     <footer>
         <div class="bottom-footer">
-            <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
+            <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
         </div>
     </footer>
     <script>

@@ -32,14 +32,15 @@
             <table class="table_data">
                 <thead>
                     <tr>
-                        <th scope="col" class="column-primary" data-header="DATA"></th>
+                        <th scope="col" class="column-primary" data-header="Data"></th>
                         <th scope="col">Nama tempat wisata</th>
                         <th scope="col">Lokasi</th>
                         <th scope="col">Harga</th>
+                        <th scope="col">URL Gmaps</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Deskripsi</th>
                         <th scope="col">Diperbarui</th>
-                        <th scope="col" class="column-primary">OPSI</th>
+                        <th scope="col" class="column-primary">Opsi</th>
                     </tr>
                 </thead>
                 @foreach($tempat_wisata as $tw) 
@@ -47,8 +48,9 @@
                     <tr>
                         <td data-header="Id">{{ $tw ->id }}</td>
                         <td data-header="Nama Tempat Wisata">{{ $tw->nama_tempat_wisata }}</td>
-                        <td data-header="Harga">{{ $tw->harga }}</td>
                         <td data-header="Lokasi">{{ $tw->lokasi }}</td>
+                        <td data-header="Harga">{{ $tw->harga }}</td>
+                        <td data-header="URL Gmaps">{{ $tw->urlmap }}</td>
                         <td data-header="Foto">{{ $tw->urlimage }}</td>
                         <td data-header="deskripsi">{{ $tw->deskripsi }}</td>
                         <td data-header="Diperbarui">{{ $tw->updatedAt}}</td>
@@ -64,7 +66,7 @@
         </section>
         <footer>
             <div class="bottom-footer">
-                <p>&copy; Ibis Hotel <span id="years"></span> Made by nogi with <span class="heart-icon">&hearts;</span></p> 
+                <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
             </div>
         </footer>
         <script>
