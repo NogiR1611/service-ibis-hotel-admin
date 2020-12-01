@@ -55,6 +55,7 @@ class Event extends Controller
 
         $request->validate([
             'nama_event' => 'required|max:50',
+            'urlmap' => 'required|max:50',
             'deskripsi' => 'required|min:10|max:2000'
         ],$messages);
         
@@ -64,7 +65,8 @@ class Event extends Controller
             'tempat' => $request->tempat,
             'tanggal'=> $request->tanggal,
             'waktu' => $request->waktu,
-            'harga' => $request->harga,            
+            'harga' => $request->harga, 
+            'urlmap' => $request->urlmap,           
             'nomor' => $request->nomor,
             'email' => $request->email,
             'foto' => $foto,
@@ -93,6 +95,7 @@ class Event extends Controller
             'tanggal' => $request->tanggal,
             'waktu' => $request->waktu,
             'harga' => $request->harga,
+            'urlmap' => $request->urlmap,
             'nomor' => $request->nomor,
             'email' => $request->email,
             'foto' => $foto,

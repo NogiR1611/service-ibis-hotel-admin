@@ -14,7 +14,7 @@
         <div class="card">
             <div class="card-title">
                 <h2>Silahkan lakukan perubahan terhadap Tempat Wisata yang telah di pilih</h2>
-            </div>
+            </div> 
             @foreach($tempat_wisata as $tw)
                 <form action='/tempat-wisata/update/{{ $tw -> id }}' method='post' enctype="multipart/form-data">
                     {{ csrf_field() }}
@@ -24,6 +24,8 @@
                     <input type="text" name="lokasi" value="{{ $tw->lokasi }}" required="required"></br>
                     <label>Harga : </label></br>
                     <input type="text" name="harga" value="{{ $tw->harga }}" required="required"></br>
+                    <label>Link Google Map : </label><br>
+                    <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
                     <label>URL Foto : </label></br>
                     <input type="file" name="urlimage" value="{{ $tw->urlimage }}" required="required"></br>
                     <label>Deskripsi : </label></br>

@@ -57,11 +57,13 @@
                         <th scope="row">
                             <a class="btn btn-primary" href='/tempat-wisata/edit/{{ $tw->id }}' role="button">Edit</a>
                             <a class="btn btn-success" href='/tempat-wisata/delete/{{ $tw->id }}' role="button">Hapus</a>
+                            <a class="btn btn-info" href='http://localhost:3000/tempat-wisata/{{ $tw->id }}'>Preview</a>
                         </th>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
+            <a class="btn btn-primary" href='/wisata/tambah' role="button">Tambah Data</a>
             {{ $tempat_wisata->links('vendor.pagination.bootstrap-4') }}
         </section>
         <footer>

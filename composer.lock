@@ -511,6 +511,7 @@
                 },
                 "laravel": {
                     "providers": [
+                        "Fruitcake\\Cors\\CorsServiceProvider"
                     ]
                 }
             },

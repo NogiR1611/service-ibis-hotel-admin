@@ -31,7 +31,6 @@
                         <a href="/inbox/{{ $pk->id }}">
                             <span><b>{{ $pk -> email}}</b></span>
                             <p id="pesan">{{ $pk -> pesan}}</p>
-                            <p id="munculin"></p>
                         </a>
                         <a class="btn btn-success" href='/inbox/delete/{{ $pk->id }}' role="button">Hapus</a>
                     </li>
@@ -51,12 +50,6 @@
         <script>
             let time = new Date();
             let years = time.getFullYear();
-            let pesan = document.getElementById("pesan").innerHTML;
-            let str = pesan.substr(0,40);
-
-            document.getElementById("years").innerHTML = years;
-            document.getElementById("munculin").innerHTML = str + "...";
-
         </script>
     </body>
 </html>

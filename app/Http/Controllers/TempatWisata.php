@@ -12,7 +12,7 @@ class TempatWisata extends Controller
 {
     public function pagination(){
         $tempat_wisata = DB::table('list_tempat_wisata')->paginate(3);
-        return response()->json($tempat_wisata);
+        return response()->json($tempat_wisata)->header('Access-Control-Allow-Origin', '*');
     }
 
     public function json(){
@@ -60,6 +60,7 @@ class TempatWisata extends Controller
             'nama_tempat_wisata' => $request->nama_tempat_wisata,
             'lokasi' => $request->lokasi,
             'harga' => $request->harga,
+            'urlmap' => $request->urlmap,
             'urlimage' => $urlimage,
             'deskripsi' => $request->deskripsi
         ]);
@@ -85,6 +86,7 @@ class TempatWisata extends Controller
             'nama_tempat_wisata' => $request->nama_tempat_wisata,
             'lokasi' => $request->lokasi,
             'harga' => $request->harga,
+            'urlmap' => $request->urlmap,
             'urlimage' => $urlimage,
             'deskripsi' => $request->deskripsi
         ]);

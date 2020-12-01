@@ -34,7 +34,7 @@
             <input type="text" name="lokasi" required="required" value="{{ old('lokasi') }}"></br>
             <label>Harga : </label></br>
             <input type="text" name="harga" required="required" value="{{ old('harga') }}"></br>
-            <label>Link Google Map : </label><br>
+            <label>Link Lokasi pada Google Map : </label><br>
             <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
             <label>Foto : </label></br>
             <input type="file" action="/upload" name="urlimage" required="required" value="{{ old('urlimage') }}" id="image"></br>

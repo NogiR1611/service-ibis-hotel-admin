@@ -27,6 +27,8 @@
                     <input type="text" name="waktu" value="{{ $event->waktu }}" required="required"></br>
                     <label>Harga : </label></br>
                     <input type="text" name="harga" value="{{ $event->harga }}" required="required"></br>
+                    <label>Link Lokasi pada Google Map : </label><br>
+                    <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
                     <label>Foto : </label>
                     <input type="file" name="foto" value="{{ $event->foto }}" required="required"></br>
                     <label>nomor : </label></br>

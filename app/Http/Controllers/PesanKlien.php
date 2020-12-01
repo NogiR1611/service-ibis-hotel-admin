@@ -38,13 +38,13 @@ class PesanKlien extends Controller
             'nama_kontak'=> $request->nama_kontak,
             'email'=> $request->email,
             'pesan'=>$request->pesan
-        ]); 
+        ]);
         
         return response()->json([
             'nama_kontak'=>$request->nama_kontak,
             'email'=>$request->email,
             'pesan'=>$request->pesan
-        ]);
+        ])->header('Access-Control-Allow-Origin', '*');
         
         /*
         $input = $request->all();

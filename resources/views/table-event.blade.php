@@ -65,11 +65,13 @@
                         <th scope="row">
                             <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
                             <a class="btn btn-success" href='/event/delete/{{ $e->id }}' role="button">Hapus</a>
+                            <a class="btn btn-info" href='http://localhost:3000/event/{{ $e->id }}'>Preview</a>
                         </th>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
+            <a class="btn btn-primary" href="/event/tambah" role="button">Tambah Data</a>
             {{ $events->links('vendor.pagination.bootstrap-4') }}
         </section>
     <footer>
