@@ -16,21 +16,23 @@
                 <h2>Silahkan lakukan perubahan terhadap Tempat Wisata yang telah di pilih</h2>
             </div> 
             @foreach($tempat_wisata as $tw)
-                <form action='/tempat-wisata/update/{{ $tw -> id }}' method='post' enctype="multipart/form-data">
+                <form action='/wisata/update/{{ $p -> id }}' method='post' enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <label>Nama tempat wisata : </label></br>
-                    <input type="text" name="nama_tempat_wisata" value="{{ $tw->nama_tempat_wisata }}" required="required"></br>
+                    <input type="text" name="nama_tempat_wisata" required="required" value="{{ $tw->nama_tempat_wisata }}"></br>
                     <label>Lokasi : </label></br>
-                    <input type="text" name="lokasi" value="{{ $tw->lokasi }}" required="required"></br>
+                    <input type="text" name="lokasi" required="required" value="{{ $tw->lokasi }}"></br>
                     <label>Harga : </label></br>
-                    <input type="text" name="harga" value="{{ $tw->harga }}" required="required"></br>
-                    <label>Link Google Map : </label><br>
-                    <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
-                    <label>URL Foto : </label></br>
-                    <input type="file" name="urlimage" value="{{ $tw->urlimage }}" required="required"></br>
+                    <input type="text" name="harga" required="required" value="{{ $tw->harga }}"></br>
+                    <label>Link Lokasi pada Google Map : </label><br>
+                    <input type="text" name="urlmap" required="required" value="{{ $tw->urlmap }}"><br>
+                    <label>Foto : </label></br>
+                    <input type="file" action="/upload" name="urlimage" required="required" value="{{ $tw->urlimage }}" id="image"></br>
+                    <p class="ket_foto"><i>*)Tinggi Foto menggunakan satuan Pixels</i></p></br>
+                    <p class="ket_foto"><i>*)Foto harus menggunakan model Potret</i></p></br>
+                    <p class="ket_foto"><i>*)File maksimal berukuran 2048 Kb</i></p>
                     <label>Deskripsi : </label></br>
-                    <textarea cols="80" rows="20" name="deskripsi" required="required">{{ $tw->deskripsi }}</textarea></br>
-                    <button type="submit" class="button-confirm">Update</button>
+                    <textarea cols="80" rows="20" name="deskripsi" id="deskripsi">{{ $tw->deskripsi }}</textarea></br>
                 </form>
             @endforeach
         </div>

@@ -32,7 +32,7 @@ class TempatWisata extends Controller
     }
  
     public function get_form(){
-        return view('data_wisata');
+        return view('form_wisata');
     }
 
     public function post_tempat_wisata(Request $request){

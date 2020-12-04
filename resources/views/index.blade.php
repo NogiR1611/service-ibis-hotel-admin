@@ -30,16 +30,16 @@
                 </div>
             </div>
             <div class="Item-menu">
-                <h2>Event</h2>
+                <h2>Promosi</h2>
                 <div class="Item-column">
                     <div class="Item">
-                        <a href="{{ route('tambah-event') }}">
+                        <a href="{{ route('tambah-promosi') }}">
                             <img src="{{ asset('img/document.png') }}" class="item-image" alt="">
                             <h3>Input Data</h3>
                         </a>
                     </div>
                     <div class="Item">
-                        <a href="{{ route('event') }}">
+                        <a href="{{ route('promosi') }}">
                             <img src="{{ asset('img/table.png') }}" class="item-image" alt="">
                             <h3>Lihat Data</h3>
                         </a>
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="Item-menu-inbox">
-                <h2>Masukan Pesan Klien</h2>
+                <h2>Feedback Klien</h2>
                 <div class="Item">
                     <a href="{{ route('inbox') }}">
                         <img src="{{ asset('img/inbox.png') }}" class="item-image" alt="">

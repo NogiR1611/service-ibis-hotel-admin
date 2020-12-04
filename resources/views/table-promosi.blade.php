@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <title>Tabel Data Event</title>
+        <title>Tabel Data Promosi</title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     </head>
     <body>
@@ -13,7 +13,7 @@
         </header>
         <section>
             <div class="card-title">
-                <h2>Data Event yang telah di input dan ditampilkan pada Situs Klien</h2>
+                <h2>Data Promosi yang telah di input dan ditampilkan pada Situs untuk Publik</h2>
             </div>
             <!-- menampilkan pesan berhasil di update -->
             @if ($message = Session::get('sukses'))
@@ -33,46 +33,40 @@
                 <thead>
                     <tr>
                         <th scope="col" class="column-primary" data-header="Data"></th>
-                        <th scope="col">Nama Event</th>
-                        <th scope="col">Tempat</th>
-                        <th scope="col">Tanggal</th>
-                        <th scope="col">Waktu</th>
-                        <th scope="col">Harga</th>
-                        <th scope="col">URL GMaps</th>
-                        <th scope="col">Nomor</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Judul Promosi</th>
+                        <th scope="col">Departemen</th>
+                        <th scope="col">Periode</th>
+                        <th scope="col">Syarat</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Deskripsi</th>
+                        <th scope="col">Info&Kontak</th>
                         <th scope="col">Diperbarui</th>
                         <th scope="col" class="column-primary">Opsi</th>
                     </tr>
                 </thead>
-                @foreach($events as $e)
+                @foreach($promosi as $p)
                 <tbody>
                     <tr> 
-                        <td data-header="Id">{{ $e -> id }}</td>
-                        <td data-header="Nama Event">{{ $e -> nama_event }}</td>
-                        <td data-header="Tempat">{{ $e -> tempat }}</td>
-                        <td data-header="Tanggal">{{ $e -> tanggal }}</td>
-                        <td data-header="Waktu">{{ $e -> waktu }}</td>
-                        <td data-header="Harga">{{ $e -> harga }}</td>
-                        <td data-header="URL Gmaps">{{ $e -> urlmap }}</td>
-                        <td data-header="Nomor">{{ $e -> nomor }}</td>
-                        <td data-header="Email">{{ $e -> email }}</td>
-                        <td data-header="Foto">{{ $e -> foto }}</td>
-                        <td data-header="Deskripsi">{{ $e -> deskripsi }}</td>
-                        <td data-header="Diperbarui">{{ $e -> updatedAt }}</td>
+                        <td data-header="Id">{{ $p -> id }}</td>
+                        <td data-header="Judul Promosi">{{ $p -> judul_promosi }}</td>
+                        <td data-header="Penulis">{{ $p -> penulis }}</td>
+                        <td data-header="periode">{{ $p -> periode }}</td>
+                        <td data-header="Syarat">{{ $p -> syarat }}</td>
+                        <td data-header="Foto">{{ $p -> foto }}</td>
+                        <td data-header="Deskripsi">{{ $p -> deskripsi }}</td>
+                        <td data-header="Info&Kontak">{{ $p -> kontak }}</td>
+                        <td data-header="Diperbarui">{{ $p -> updatedAt }}</td>
                         <th scope="row">
-                            <a class="btn btn-primary" href='/event/edit/{{ $e->id }}' role="button">Edit</a>
-                            <a class="btn btn-success" href='/event/delete/{{ $e->id }}' role="button">Hapus</a>
-                            <a class="btn btn-info" href='http://localhost:3000/event/{{ $e->id }}'>Preview</a>
+                            <a class="btn btn-primary" href='/promosi/edit/{{ $p->id }}' role="button">Edit</a>
+                            <a class="btn btn-success" href='/promosi/delete/{{ $p->id }}' role="button">Hapus</a>
+                            <a class="btn btn-info" href='http://localhost:3000/promosi/{{ $p->id }}'>Preview</a>
                         </th>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
-            <a class="btn btn-primary" href="/event/tambah" role="button">Tambah Data</a>
-            {{ $events->links('vendor.pagination.bootstrap-4') }}
+            <a class="btn btn-primary" href="/promosi/tambah" role="button">Tambah Data</a>
+            {{ $promosi->links('vendor.pagination.bootstrap-4') }}
         </section>
     <footer>
         <div class="bottom-footer">

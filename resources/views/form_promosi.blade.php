@@ -13,7 +13,11 @@
     </header>
     <div class="card">
         <div class="card-title">
-            <h2>Silahkan Isi Event yang ingin ditampilkan pada website sisi klien</h2>
+            <h2>Silahkan Isi Data Terkait Promosi yang diinginkan</h2>
+            <p><i>
+                Semua Data Promosi yang di isi akan ditampilkan pada
+                Situs untuk Publik jadi isikan datanya dengan Benar yah :)
+            </i></p>
         </div>
         <!-- menampilkan error validasi -->
         @if (count($errors) > 0)
@@ -26,28 +30,35 @@
             </div>
         @endif
 
-        <form action='/event/kirim' method='post' enctype="multipart/form-data">
+        <form action='/promosi/kirim' method='post' enctype="multipart/form-data">
             {{ csrf_field() }}
-            <label>Nama event : </label></br>
-            <input type="text" name="nama_event" value="{{ old('nama_event') }}" required="required"></br>
-            <label>Tempat : </label></br> 
-            <input type="text" name="tempat" value="{{ old('tempat') }}" required="required"></br>
-            <label>Tanggal : </label></br>
-            <input type="date" name="tanggal" value="{{ old('tanggal') }}" required="required"></br>
-            <label>Waktu : </label></br>
-            <input type="text" name="waktu" value="{{ old('waktu') }}" required="required"></br>
-            <label>Harga : </label></br>
-            <input type="text" name="harga" value="{{ old('harga') }}" required="required"></br>
-            <label>Link Lokasi pada Google Map : </label><br>
-            <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
+            <label>Judul Promosi : </label></br>
+            <input type="text" name="judul_promosi" value="{{ old('judul_promosi') }}" required="required"></br>
+            <label>Nama Departemen Promotor : </label></br> 
+            <input type="text" name="penulis" value="{{ old('penulis') }}" required="required"></br>
+            <label>Periode Promosi : </label></br>
+            <textarea cols="80" rows="5" name="periode" value="{{ old('periode') }}" required="required"></textarea></br>
+            <p class="ket_foto"><i>
+                *)Harus menggunakan nomor bila ingin di buat list.contoh : </br>
+                1. Periode 1 : 10 januari 2021 -9 februari 2021 </br>
+                2. Periode 2 : 10 februari 2021 - 9 maret 2021
+            </i></p>
+            <label>Persyaratan&Ketentuan : </label></br>
+            <textarea cols="80" rows="20" name="syarat" value="{{ old('syarat') }}" required="required"></textarea></br>
+            <p class="ket_foto"><i>
+                *)Harus menggunakan nomor bila ingin di buat list.contoh : </br>
+                1. Berdasarkan ketersediaan Kamar </br>
+                2. Diskon tidak berlaku selama peak season/high season
+            </i></p>
             <label>Foto : </label></br>
             <input type="file" action="/upload" value="{{ old('foto') }}" name="foto" id="foto" required="required"></br>
-            <label>Nomor Kontak : </label></br>
-            <input type="text" name="nomor" value="{{ old('nomor') }}" required="required"></br>
-            <label>Email : </label></br>
-            <input type="email" name="email" value="{{ old('email') }}" required="required"></br>
+            <p class="ket_foto"><i>*)Tinggi Foto menggunakan satuan Pixels</i></p></br>
+            <p class="ket_foto"><i>*)Foto harus menggunakan model Potrait</i></p></br>
+            <p class="ket_foto"><i>*)Foto maksimal berukuran 2048 Kb</i></p></br>
             <label>Deskripsi : </label></br>
             <textarea cols="80" rows="20" name="deskripsi" required="required">{{ old('deskripsi') }}</textarea></br>
+            <label>Kontak atau Info Lebih Lanjut : </label></br>
+            <textarea cols="80" rows="20" name="kontak" required="required">{{ old('kontak') }}</textarea></br>
             <button type="submit" class="button-confirm">Tambahkan</button>
         </form>
     </div>

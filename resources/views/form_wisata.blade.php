@@ -38,6 +38,9 @@
             <input type="text" name="urlmap" required="required" value="{{ old('urlmap') }}"><br>
             <label>Foto : </label></br>
             <input type="file" action="/upload" name="urlimage" required="required" value="{{ old('urlimage') }}" id="image"></br>
+            <p class="ket_foto"><i>*)Tinggi Foto menggunakan satuan Pixels</i></p></br>
+            <p class="ket_foto"><i>*)Foto harus menggunakan model Potret</i></p></br>
+            <p class="ket_foto"><i>*)Foto maksimal berukuran 2048 Kb</i></p></br>
             <label>Deskripsi : </label></br>
             <textarea cols="80" rows="20" name="deskripsi" id="deskripsi">{{ old('deskripsi') }}</textarea></br>
             <button type="submit" class="button-confirm">Tambahkan</button>
