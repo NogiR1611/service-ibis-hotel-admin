@@ -37,14 +37,14 @@
             <label>Nama Departemen Promotor : </label></br> 
             <input type="text" name="penulis" value="{{ old('penulis') }}" required="required"></br>
             <label>Periode Promosi : </label></br>
-            <textarea cols="80" rows="5" name="periode" value="{{ old('periode') }}" required="required"></textarea></br>
+            <textarea cols="80" rows="5" name="periode" required="required">{{ old('periode') }}</textarea></br>
             <p class="ket_foto"><i>
                 *)Harus menggunakan nomor bila ingin di buat list.contoh : </br>
                 1. Periode 1 : 10 januari 2021 -9 februari 2021 </br>
                 2. Periode 2 : 10 februari 2021 - 9 maret 2021
             </i></p>
             <label>Persyaratan&Ketentuan : </label></br>
-            <textarea cols="80" rows="20" name="syarat" value="{{ old('syarat') }}" required="required"></textarea></br>
+            <textarea cols="80" rows="20" name="syarat" required="required">{{ old('syarat') }}</textarea></br>
             <p class="ket_foto"><i>
                 *)Harus menggunakan nomor bila ingin di buat list.contoh : </br>
                 1. Berdasarkan ketersediaan Kamar </br>

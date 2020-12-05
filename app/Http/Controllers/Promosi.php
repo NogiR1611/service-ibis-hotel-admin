@@ -10,7 +10,7 @@ use Session;
 class Promosi extends Controller
 {
     public function pagination(){
-        $promosi = DB::table('list_promosi')->paginate(3);
+        $promosi = DB::table('list_promosi')->paginate(6);
         return response()->json($promosi);
     }
 
@@ -30,7 +30,7 @@ class Promosi extends Controller
     }
 
     public function get_promosi(){
-        $promosi = DB::table('list_promosi')->paginate(3);
+        $promosi = DB::table('list_promosi')->paginate(6);
         return view('table-promosi',['promosi'=>$promosi]);
     }
 
@@ -53,8 +53,11 @@ class Promosi extends Controller
         ];
 
         $request->validate([
-            'judul_promosi' => 'required|max:50',
-            'deskripsi' => 'required|min:10|max:2000'
+            'judul_promosi' => 'required|max:100',
+            'deskripsi' => 'required|min:10|max:2000',
+            'periode' => 'required',
+            'deskripsi' => 'required',
+            'kontak' => 'required'
         ],$messages);
         
         //insert data ke database

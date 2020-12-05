@@ -11,7 +11,7 @@ use Session;
 class TempatWisata extends Controller
 {
     public function pagination(){
-        $tempat_wisata = DB::table('list_tempat_wisata')->paginate(3);
+        $tempat_wisata = DB::table('list_tempat_wisata')->paginate(6);
         return response()->json($tempat_wisata)->header('Access-Control-Allow-Origin', '*');
     }
 
@@ -27,7 +27,7 @@ class TempatWisata extends Controller
     }
 
     public function get_tempat_wisata(){
-        $tempat_wisata = DB::table('list_tempat_wisata')->paginate(3);
+        $tempat_wisata = DB::table('list_tempat_wisata')->paginate(6);
         return view('table-wisata',['tempat_wisata' => $tempat_wisata]);
     }
  
