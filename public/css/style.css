@@ -94,6 +94,7 @@ header img{
   text-align : center;
   border : 1px solid gray;
   box-shadow : 1px 1px 1px 1px;
+  border-radius : 8px;
 }
 
 .Item-menu-inbox{
@@ -186,7 +187,7 @@ header img{
 }
 
 footer{
-  margin-top: 350px;
+  margin-top: 100px;
   background-color: #333;
   color : white;
   text-align : center;
@@ -498,6 +499,10 @@ footer{
   .Item a img{
     width: 30px;
     height: 30px;
+  }
+
+  footer{
+    margin-top: 100px;
   }
 
   .Item-menu-inbox{
