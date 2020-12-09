@@ -5,20 +5,26 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Selamat Datang di situs Admin Ibis Hotel Bandung</title>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
             <a href="/"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
         </header>
         <container> 
-            <h1 class="title-index" style="text-align : center;">Selamat Datang di website khusus Admin</h1>
+            <h1 class="title-index" style="text-align : center;">Selamat datang di website khusus admin</h1>
             <div class="Item-menu">
                 <h2>Tempat Wisata</h2>
-                <div class="Item-column">
+                <p>
+                    Silahkan kelola informasi terkait tempat wisata yang di rekomendasikan
+                    di sekitar kota bandung yah nanti semua informasi yang ditambah akan di tampilkan pada publik
+                </p>
+                <div class="Item-column"> 
                     <div class="Item">
                         <a href="{{ route('tambah-wisata') }}">
                             <img src="{{ asset('img/document.png') }}" class="item-image" alt="">
-                            <h3>Input Data</h3>
+                            <h3>Tambah Data</h3>
                         </a>
                     </div>
                     <div class="Item">
@@ -31,11 +37,15 @@
             </div>
             <div class="Item-menu">
                 <h2>Promosi</h2>
+                <p>
+                    Silahkan kelola informasi terkait promo pada ibis hotel pasteur yang terbaru
+                    nanti semua promo yang ditambahkan akan ditampilkan pada publik
+                </p>
                 <div class="Item-column">
                     <div class="Item">
                         <a href="{{ route('tambah-promosi') }}">
                             <img src="{{ asset('img/document.png') }}" class="item-image" alt="">
-                            <h3>Input Data</h3>
+                            <h3>Tambah Data</h3>
                         </a>
                     </div>
                     <div class="Item">
@@ -57,6 +67,17 @@
             </div>
         </container>
         <footer>
+            <div class="top-footer">
+                <div class="top-left-footer">
+                    <h3>Kontak Kami</h3>
+                    <p><img src="{{ asset('img/telephone.png') }}" class="icon-contact" alt="" />085318909969</p>
+                    <p><img src="{{ asset('img/email.png') }}" class="icon-contact" alt="" />nogir16111998@gmail.com</p>
+                </div>
+                <div class="top-right-footer">
+                    <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
+                    <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+                </div>
+            </div>
             <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
             </div>

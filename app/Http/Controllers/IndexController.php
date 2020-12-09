@@ -11,4 +11,12 @@ class IndexController extends Controller
     {
         return view('index');
     }
+
+    public function syarat_ketentuan(){
+        return view('syarat');
+    }
+
+    public function kebijakan_privasi(){
+        return view('privasi');
+    }
 }

@@ -1,3 +1,7 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
 section{
   margin-bottom: 200px;
 }
@@ -103,6 +107,7 @@ header img{
   text-align: center;
   border : 1px solid gray;
   box-shadow : 1px 1px 1px 1px;
+  border-radius: 8px;
 }
 
 .Item-column{
@@ -132,6 +137,22 @@ header img{
 .item-image{
   height : 50px;
   width : 50px;
+}
+
+.title-documentation{
+  text-align: center;
+}
+
+.privasi-syarat{
+  padding: 20px 40px;
+}
+
+.privasi-syarat{
+  color: #4d4d4d;
+}
+
+.privasi-syarat h1,li{
+  color: #4d4d4d;
 }
 
 .table_data{
@@ -189,7 +210,7 @@ header img{
 footer{
   margin-top: 100px;
   background-color: #333;
-  color : white;
+  color : #E4E4E4 ;
   text-align : center;
   padding : 20px 40px;
 }
@@ -283,9 +304,48 @@ footer{
   margin:0px 0px;
 }
 
+.top-footer{
+  margin-bottom: 40px;
+  display:grid;
+  grid-template-columns: repeat(2,auto);
+}
+
+.top-left-footer{
+  text-align: left;
+}
+
+.top-right-footer{
+  padding-left: 800px;
+  padding-top: 50px;
+}
+
+.top-right-footer a{
+  display: block;
+  text-align: left;
+  margin:5px 0px;
+  color: #E4E4E4;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.top-right-footer a:hover{
+  color: #CAC4C4;
+}
+
+.icon-contact{
+  width: 18px;
+  height: 15px;
+  margin-right: 5px;
+}
+
 @media only screen and (max-width:1024px){
   .card form{
     padding: 0px 20px;
+  }
+
+  .top-right-footer {
+    padding-left: 500px;
+    padding-top: 50px;
   }
 
   .table_data th,td{
@@ -302,6 +362,40 @@ footer{
 }
 
 @media only screen and (max-width:768px){
+  footer{
+    padding: 10px 20px;
+  }
+
+  .top-left-footer {
+    font-size: 16px;
+  }
+
+  .top-right-footer{
+    padding-left: 350px;
+    padding-top: 50px;
+  }
+
+  .top-right-footer a{
+    font-size: 14px;
+  }
+
+  .icon-contact{
+    width: 15px;
+    height: 12px;    
+  }
+
+  .privasi-syarat h1{
+    font-size: 24px;
+  }
+
+  .privasi-syarat p{
+    font-size: 14px;
+  }
+
+  .privasi-syarat li{
+    font-size: 14px;
+  }
+
   .Item-menu-inbox{
     margin: 20px 150px;
   }
@@ -355,6 +449,10 @@ footer{
     font-size: 18px;
   }
 
+  .card-title p{
+    font-size: 10px;
+  }
+
   .card form label{
     font-size: 12px;
   }
@@ -373,8 +471,28 @@ footer{
 }
 
 @media only screen and (max-width: 425px){
+  .privasi-syarat{
+    padding: 20px 20px;
+  }
+
+  .privasi-syarat h1{
+    font-size: 20px;
+  }
+
+  .privasi-syarat p{
+    font-size: 12px;
+  }
+
+  .privasi-syarat li{
+    font-size: 12px;
+  }
+  
   .title-index{
     font-size: 18px;
+  }
+
+  .Item-menu p{
+    font-size: 12px;
   }
 
   .Item-menu h2{
@@ -393,6 +511,31 @@ footer{
     font-size: 16px;
   }
 
+  footer{
+    padding: 10px 20px;
+  }
+  .top-left-footer {
+    font-size: 10px;
+  }
+
+  .top-left-footer{
+    font-size: 8px;
+  }
+
+  .top-right-footer{
+    padding-left: 150px;
+    padding-top: 20px;
+  }
+
+  .top-right-footer a{
+    font-size: 8px;
+  }
+
+  .icon-contact{
+    width: 12px;
+    height: 10px;    
+  }
+
   footer .bottom-footer p{
     font-size: 10px;
   }
@@ -401,6 +544,10 @@ footer{
     width: 250px;
     font-size: 12px;
   } 
+
+  .ket_foto{
+    font-size: 10px;
+  }
 
   .card form textarea{
     width: 250px;
@@ -470,6 +617,30 @@ footer{
     padding: 10px 30px;
   }
 
+  /*footer*/
+  .top-left-footer {
+    font-size: 10px;
+  }
+
+  .top-left-footer{
+    font-size: 8px;
+  }
+
+  .top-right-footer{
+    padding-left: 100px;
+    padding-top: 20px;
+  }
+
+  .top-right-footer a{
+    font-size: 8px;
+  }
+
+  .icon-contact{
+    width: 12px;
+    height: 10px;    
+  }
+  /*end*/
+
   .Item-menu-inbox{
     padding: 10px 30px;
   }
@@ -503,8 +674,33 @@ footer{
 
   footer{
     margin-top: 100px;
+    padding: 10px 20px;
   }
 
+  /*footer*/
+  .top-left-footer h3{
+    font-size: 10px;
+  }
+
+  .top-left-footer{
+    font-size: 8px;
+  }
+
+  .top-right-footer{
+    padding-left: 50px;
+    padding-top: 20px;
+  }
+
+  .top-right-footer a{
+    font-size: 8px;
+  }
+
+  .icon-contact{
+    width: 12px;
+    height: 10px;    
+  }
+  /*end*/
+  
   .Item-menu-inbox{
     padding: 10px 15px;
   }
@@ -520,6 +716,10 @@ footer{
   .card form input{
     width: 150px;
     height: 15px;
+  }
+
+  .ket_foto{
+    font-size: 8px;
   }
 
   .card form textarea{

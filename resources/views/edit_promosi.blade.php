@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Edit Data Event</title>
         <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head> 
     <body>
         <header>
@@ -33,12 +35,23 @@
                     <textarea cols="80" rows="20" name="deskripsi" required="required">{{ $p->deskripsi }}</textarea></br>
                     <label>Kontak atau Info Lebih Lanjut : </label></br>
                     <textarea cols="80" rows="20" name="kontak" required="required">{{ $p->kontak }}</textarea></br>
-                    <button type="submit" class="button-confirm">update</button>
+                    <button type="submit" class="button-confirm">Update</button>
                 </form>
             @endforeach
         </div>
     </body>
     <footer>
+        <div class="top-footer">
+            <div class="top-left-footer">
+                <h3>Kontak Kami</h3>
+                <p><img src="{{ asset('img/telephone.png') }}" class="icon-contact" alt="" />085318909969</p>
+                <p><img src="{{ asset('img/email.png') }}" class="icon-contact" alt="" />nogir16111998@gmail.com</p>
+            </div>
+            <div class="top-right-footer">
+                <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
+                <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+            </div>
+        </div>
         <div class="bottom-footer">
             <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
         </div>

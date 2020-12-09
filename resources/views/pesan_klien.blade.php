@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
         <title>Pesan Klien</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('./css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -36,6 +38,17 @@
             @endforeach
         </container>
         <footer>
+            <div class="top-footer">
+                <div class="top-left-footer">
+                    <h3>Kontak Kami</h3>
+                    <p><img src="{{ asset('img/telephone.png') }}" class="icon-contact" alt="" />085318909969</p>
+                    <p><img src="{{ asset('img/email.png') }}" class="icon-contact" alt="" />nogir16111998@gmail.com</p>
+                </div>
+                <div class="top-right-footer">
+                    <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
+                    <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+                </div>
+            </div>
             <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
             </div>

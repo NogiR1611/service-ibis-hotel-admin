@@ -8,6 +8,8 @@
         <title>Kotak Masuk Feedback Klien</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css') }}" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -29,8 +31,8 @@
                     @foreach($pesan_klien as $pk)
                     <li>
                         <a href="/inbox/{{ $pk->id }}">
-                            <span><b>{{ $pk -> email}}</b></span>
-                            <p id="pesan">{{ $pk -> pesan}}</p>
+                            <span><b>{{ $pk -> email }}</b></span>
+                            <p>{{ $pk -> createdAt }}</p>
                         </a>
                         <a class="btn btn-success" href='/inbox/delete/{{ $pk->id }}' role="button">Hapus</a>
                     </li>
@@ -41,6 +43,17 @@
             {{ $pesan_klien->links('vendor.pagination.bootstrap-4') }}
         </container>
         <footer>
+            <div class="top-footer">
+                <div class="top-left-footer">
+                    <h3>Kontak Kami</h3>
+                    <p><img src="{{ asset('img/telephone.png') }}" class="icon-contact" alt="" />085318909969</p>
+                    <p><img src="{{ asset('img/email.png') }}" class="icon-contact" alt="" />nogir16111998@gmail.com</p>
+                </div>
+                <div class="top-right-footer">
+                    <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
+                    <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+                </div>
+            </div>
             <div class="bottom-footer">
                 <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
             </div>

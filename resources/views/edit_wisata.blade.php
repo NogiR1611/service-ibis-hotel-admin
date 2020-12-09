@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <title>Edit Data Wisata</title>
         <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <header>
@@ -16,9 +18,9 @@
                 <h2>Silahkan lakukan perubahan terhadap Tempat Wisata yang telah di pilih</h2>
             </div> 
             @foreach($tempat_wisata as $tw)
-                <form action='/wisata/update/{{ $p -> id }}' method='post' enctype="multipart/form-data">
+                <form action='/tempat-wisata/update/{{ $tw -> id }}' method='post' enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    <label>Nama tempat wisata : </label></br>
+                    <label>Nama Tempat Wisata : </label></br>
                     <input type="text" name="nama_tempat_wisata" required="required" value="{{ $tw->nama_tempat_wisata }}"></br>
                     <label>Lokasi : </label></br>
                     <input type="text" name="lokasi" required="required" value="{{ $tw->lokasi }}"></br>
@@ -29,15 +31,27 @@
                     <label>Foto : </label></br>
                     <input type="file" action="/upload" name="urlimage" required="required" value="{{ $tw->urlimage }}" id="image"></br>
                     <p class="ket_foto"><i>*)Tinggi Foto menggunakan satuan Pixels</i></p></br>
-                    <p class="ket_foto"><i>*)Foto harus menggunakan model Potret</i></p></br>
+                    <p class="ket_foto"><i>*)Foto harus menggunakan model Potrait</i></p></br>
                     <p class="ket_foto"><i>*)File maksimal berukuran 2048 Kb</i></p>
                     <label>Deskripsi : </label></br>
                     <textarea cols="80" rows="20" name="deskripsi" id="deskripsi">{{ $tw->deskripsi }}</textarea></br>
+                    <button type="submit" class="button-confirm">Update</button>
                 </form>
             @endforeach
         </div>
     </body>
     <footer>
+        <div class="top-footer">
+            <div class="top-left-footer">
+                <h3>Kontak Kami</h3>
+                <p><img src="{{ asset('img/telephone.png') }}" class="icon-contact" alt="" />085318909969</p>
+                <p><img src="{{ asset('img/email.png') }}" class="icon-contact" alt="" />nogir16111998@gmail.com</p>
+            </div>
+            <div class="top-right-footer">
+                <a href="/syarat-dan-ketentuan">Syarat dan Ketentuan</a>
+                <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+            </div>
+        </div>
         <div class="bottom-footer">
             <p>&copy; Ibis Hotel <span id="years"></span> Made by Ibis Hotel Pasteur with <span class="heart-icon">&hearts;</span></p> 
         </div>

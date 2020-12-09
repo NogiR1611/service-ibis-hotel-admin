@@ -19,7 +19,9 @@ use App\Http\Controllers\Tester;
 |
 */
 Route::get('/',[IndexController::class,'get_data']);
-   
+Route::get('/syarat-dan-ketentuan',[IndexController::class,'syarat_ketentuan']);
+Route::get('/kebijakan-privasi',[IndexController::class,'kebijakan_privasi']);
+
 //Tempat Wisata
 Route::get('/wisata/pagination',[TempatWisata::class,'pagination']);
 Route::get('/wisata/json',[TempatWisata::class,'json']);
