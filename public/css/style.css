@@ -2,10 +2,6 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
-section{
-  margin-bottom: 200px;
-}
-
 #alert-login{
   font-size: 12px;
 }
@@ -30,6 +26,10 @@ section{
   cursor: pointer;
   border-radius:8px;
   transition:all .3s;
+}
+
+.button-signin-and-signup:hover{
+  background-color: #AB1313;
 }
 
 #bg-login{
@@ -90,9 +90,35 @@ header .home a{
   text-align:center;
 }
 
-header .logout{
-  display: block;
-  margin-left: 100%;
+header .logout ul{
+  text-align: right;
+  margin:0;
+}
+
+header .logout ul li{
+  display:block;
+  justify-items: right;
+  padding:10px 0px;
+}
+
+header .logout ul li a{
+  font-size: 16px;
+  padding: 3px 5px;
+  text-decoration: none;
+  color: #757171;
+  box-shadow: 1px 1px 1px 1px #3C3737;
+  border-radius: 8px;
+  transition: all .3s;
+}
+
+header .logout ul li a:hover{
+  box-shadow: 2px 1px 1px #3C3737;
+}
+
+.img-power{
+  width: 16px;
+  height: 16px;
+  margin: auto 5px;
 }
 
 header img{
@@ -348,6 +374,10 @@ footer{
 }
 
 @media only screen and (max-width:1024px){
+  #login{
+    padding: 20px 20px;
+  }
+
   .card form{
     padding: 0px 20px;
   }
@@ -371,6 +401,27 @@ footer{
 }
 
 @media only screen and (max-width:768px){
+  .signin-and-signup {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .button-signin-and-signup{
+    font-size: 14px;
+  }
+
+  #login h1{
+    font-size: 24px;
+  }
+
+  #login p,label{
+    font-size: 14px;
+  }
+
+  #bg-login{
+    display: none;
+  }
+
   footer{
     padding: 10px 20px;
   }
@@ -480,6 +531,25 @@ footer{
 }
 
 @media only screen and (max-width: 425px){
+  #login{
+    margin: 40px 0px;
+    width: 60%;
+  }
+
+  header .logout ul li{
+    font-size: 12px;
+    padding: 5px 0px;
+  }
+
+  header .logout ul li a{
+    font-size: 12px;
+  }
+
+  .img-power{
+    width: 10px;
+    height: 10px;
+  }
+
   .privasi-syarat{
     padding: 20px 20px;
   }
@@ -622,6 +692,14 @@ footer{
 }
 
 @media only screen and (max-width: 375px){
+  #login p,label{
+    font-size: 12px;
+  }
+
+  .button-signin-and-signup {
+    font-size: 12px;
+}
+
   .Item-menu{
     padding: 10px 30px;
   }
@@ -664,6 +742,20 @@ footer{
 }
 
 @media only screen and (max-width: 320px){
+  header .logout ul li{
+    font-size: 10px;
+    padding: 5px 0px;
+  }
+
+  header .logout ul li a{
+    font-size: 10px;
+  }
+
+  .img-power{
+    width: 10px;
+    height: 10px;
+  }
+
   .Item-menu{
     padding: 10px 20px;
   }

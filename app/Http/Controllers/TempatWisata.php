@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Login;
 use app\Foto;
 use App\Models\ModelWisata;
 use Session;
@@ -26,13 +27,15 @@ class TempatWisata extends Controller
         return ModelWisata::find($id);
     }
 
-    public function get_tempat_wisata(){
+    public function get_tempat_wisata(Request $request){
+        $login = $request->session()->get('username_login');
         $tempat_wisata = DB::table('list_tempat_wisata')->paginate(6);
-        return view('table-wisata',['tempat_wisata' => $tempat_wisata]);
+        return view('table-wisata',['tempat_wisata' => $tempat_wisata,'login' => $login]);
     }
  
-    public function get_form(){
-        return view('form_wisata');
+    public function get_form(Request $request){
+        $login = $request->session()->get('username_login');
+        return view('form_wisata',['login' => $login]);
     }
 
     public function post_tempat_wisata(Request $request){
@@ -69,9 +72,10 @@ class TempatWisata extends Controller
         return redirect('wisata');
     }
 
-    public function edit_form($id){
+    public function edit_form($id,Request $request){
+        $login = $request->session()->get('username_login');
         $tempat_wisata = DB::table('list_tempat_wisata')->where('id',$id)->get();
-        return view('edit_wisata',['tempat_wisata' => $tempat_wisata]);
+        return view('edit_wisata',['tempat_wisata' => $tempat_wisata,'login' => $login]);
     }
 
     public function update_tempat_wisata(Request $request){

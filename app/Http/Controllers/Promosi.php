@@ -29,13 +29,15 @@ class Promosi extends Controller
         return ModelPromosi::find($id);
     }
 
-    public function get_promosi(){
+    public function get_promosi(Request $request){
+        $login = $request->session()->get('username_login');
         $promosi = DB::table('list_promosi')->paginate(6);
-        return view('table-promosi',['promosi'=>$promosi]);
+        return view('table-promosi',['promosi'=>$promosi,'login' => $login]);
     }
 
-    public function get_form(){
-        return view('form_promosi');
+    public function get_form(Request $request){
+        $login = $request->session()->get('username_login');
+        return view('form_promosi',['login' => $login]);
     }
 
     public function post_promosi(Request $request){
@@ -75,9 +77,10 @@ class Promosi extends Controller
         return redirect('promosi');
     }
 
-    public function edit_promosi($id){
+    public function edit_promosi($id,Request $request){
+        $login = $request->session()->get('username_login');
         $promosi = DB::table('list_promosi')->where('id',$id)->get();
-        return view('edit_promosi',['promosi' => $promosi]);
+        return view('edit_promosi',['promosi' => $promosi,'login' => $login]);
     }
 
     public function update_promosi(Request $request){

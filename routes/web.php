@@ -31,7 +31,7 @@ Route::get('promosi/pagination',[Promosi::class,'pagination']);
 Route::post('/inbox/kirim',[PesanKlien::class,'post_messages']);
 
 Route::group(['middleware' => 'CekLoginMiddleware'],function(){
-    Route::get('/home',[IndexController::class,function(){return view('index');}]);
+    Route::get('/home',[IndexController::class,'home']);
     Route::get('/register',[IndexController::class,'register']);
     Route::post('/register/kirim',[IndexController::class,'postRegister']);
     Route::get('/logout',[IndexController::class,'logout']);
@@ -53,7 +53,7 @@ Route::group(['middleware' => 'CekLoginMiddleware'],function(){
     Route::post('/promosi/kirim',[Promosi::class,'post_promosi']);
     Route::post('/promosi/update/{id}',[Promosi::class,'update_promosi']);
     Route::get('/promosi/delete/{id}',[Promosi::class,'delete_promosi']);
-
+ 
     //pesan klien 
     Route::get('/inbox/form',[PesanKlien::class,'get_form']);
     Route::get('/inbox',[PesanKlien::class,'get_inbox'])->name('inbox');

@@ -16,6 +16,11 @@ class IndexController extends Controller
     protected $maxAttempts = 3;
     protected $decayMinutes = 2;
 
+    public function home(Request $request){
+        $login = $request->session()->get('username_login');
+        return view('index',['login' => $login]);
+    }
+
     public function __construct()
     {
         $this->middleware('guest:login');
@@ -32,11 +37,15 @@ class IndexController extends Controller
     }
 
     public function syarat_ketentuan(){
-        return view('syarat');
+        $login = Login::where('username',$request->username)->firstOrFail();
+
+        return view('syarat',['login' => $login]);
     }
 
     public function kebijakan_privasi(){
-        return view('privasi');
+        $login = Login::where('username',$request->username)->firstOrFail();
+
+        return view('privasi',['login' => $login]);
     }
 
     public function login(){
@@ -58,12 +67,15 @@ class IndexController extends Controller
     }
 
     public function auth(Request $request){
-        $data = Login::where('username',$request->username)->firstOrFail();
+        $login = Login::where('username',$request->username)->firstOrFail();
         
-        if ($data){
-            if($data->password == $request->password){
-                session(['berhasil_login' => true]);
-                return redirect('/home');
+        if ($login){
+            if($login->password == $request->password){
+                session([
+                    'berhasil_login' => true,
+                    'username_login' => $login
+                ]);
+                return view('index',['login' => $login]);
             }
         }
         return redirect('/')->with('gagal','Maaf username atau password anda salah');

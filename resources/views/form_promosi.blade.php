@@ -11,7 +11,15 @@
 </head>
 <body>
     <header>
-        <a href="/home"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
+        <div class="home">
+            <a href="/home"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
+        </div>
+        <div class="logout">
+            <ul>
+                <li>Hai,{{ $login -> username }}</li>
+                <li><a href="/logout"><img src="{{ asset('img/logout.png') }}" class="img-power" alt="" />Logout</a></li>
+            </ul>
+        </div>
     </header>
     <div class="card">
         <div class="card-title">

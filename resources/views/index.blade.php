@@ -14,7 +14,10 @@
                 <a href="/home"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
             </div>
             <div class="logout">
-                <a href="/logout">Logout</a>
+                <ul>
+                    <li>Hai,{{ $login -> username }}</li>
+                    <li><a href="/logout"><img src="{{ asset('img/logout.png') }}" class="img-power" alt="" />Logout</a></li>
+                </ul>
             </div>    
         </header>
         <container> 
