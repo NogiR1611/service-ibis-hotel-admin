@@ -10,7 +10,12 @@
     </head>
     <body>
         <header>
-            <a href="/"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
+            <div class="home">
+                <a href="/home"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
+            </div>
+            <div class="logout">
+                <a href="/logout">Logout</a>
+            </div>    
         </header>
         <container> 
             <h1 class="title-index" style="text-align : center;">Selamat datang di website khusus admin</h1>

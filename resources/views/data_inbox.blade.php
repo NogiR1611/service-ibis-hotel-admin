@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-            <a href="/"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
+            <a href="/home"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
         <!-- Menampilkan notifikasi pesan dihapus -->
         @if ($message = Session::get('berhasil'))

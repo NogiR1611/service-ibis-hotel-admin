@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <title>Login Admin</title>
+        <title>Register Admin</title>
         <link rel="stylesheet" href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css') }}" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     </head>
     <body>
@@ -18,23 +18,29 @@
                         <span><strong>{{ $message }}</strong></span>
                     </div>
                     @endif
-                    <b><h1>Login</h1></b>
-                    <p>Silahkan Bagi Karyawan yang memiliki akun untuk isi username dan password yang sudah diberikan</p>
                     @if ($message = Session::get('gagal'))
                     <div class="alert alert-danger alert-block" id="alert-login">
                         <button type="button" class="close" data-dismiss="alert">×</button> 
                         <span><strong>{{ $message }}</strong></span>
                     </div>
                     @endif
-                    <form action="/login" method="POST">
+                    <b><h1>Register</h1></b>
+                    <p>Silahkan Bagi Karyawan yang belum memiliki akun Mendaftar</p>
+                    <form action="/register/kirim" method="post">
                         {{ @csrf_field() }}
                         <label>Username : </label>
                         <input type="text" id="username" name="username" alt="">
                         <div id="form-border"></div>
+                        <label>Email : </label>
+                        <input type="email" id="email" name="email" alt="">
+                        <div id="form-border"></div>
                         <label>Password : </label>
                         <input type="password" id="password" name="password" alt="">
                         <div id="form-border"></div>
-                        <button type="submit" class="button-signin-and-signup">Login</button>
+                        <label>Konfirmasi Password : </label>
+                        <input type="password" id="password" name="password_confirmation" alt="">
+                        <div id="form-border"></div>
+                        <button type="submit" class="button-signin-and-signup">Daftar</button>
                         @if(Session::has('failed'))
   					        <p style="color:red">Username Atau Password Anda Salah</p>
   				        @endif

@@ -9,7 +9,7 @@ class Login extends Component
 {
     public $username;
     public $password;
-    
+     
     public function login(Request $request){
         $request->validate([
             'username' => 'required',

@@ -11,7 +11,7 @@
     </head>
     <body>
         <header>
-            <a href="/"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
+            <a href="/home"><img src="{{ asset('img/logo-ibis.png') }}"></img></a>
         </header>
         <section>
             <div class="card-title">

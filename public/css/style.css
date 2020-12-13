@@ -6,6 +6,10 @@ section{
   margin-bottom: 200px;
 }
 
+#alert-login{
+  font-size: 12px;
+}
+
 .signin-and-signup{
   display:grid;
   grid-template-columns: 40% auto;
@@ -81,9 +85,14 @@ header{
   box-shadow: 0px 0px 5px 0px gray;
 }
 
-header a{
-  display:inline-block;
+header .home a{
+  display: inline-block;
   text-align:center;
+}
+
+header .logout{
+  display: block;
+  margin-left: 100%;
 }
 
 header img{

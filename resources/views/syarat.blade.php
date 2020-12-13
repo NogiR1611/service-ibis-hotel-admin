@@ -10,7 +10,7 @@
     </head>
     <body>
         <header>
-            <a href="/"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
+            <a href="/home"><img src="{{ asset('img/logo-ibis.png')}}"></img></a>
         </header>
         <div class="privasi-syarat">
             <h1 class="title-documentation">Syarat dan Ketentuan</h1>

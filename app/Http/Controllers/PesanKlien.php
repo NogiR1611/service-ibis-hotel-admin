@@ -56,7 +56,7 @@ class PesanKlien extends Controller
         */
     }
 
-    public function delete_inbox($id){
+    public function delete_inbox($id){ 
         DB::table('inbox_clients')->where('id',$id)->delete();
 
         Session::flash('berhasil','Pesan berhasil dihapus kak :)');
