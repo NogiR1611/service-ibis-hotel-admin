@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -33,5 +34,21 @@ class Handler extends ExceptionHandler
     public function register()
     {
         //
+    }
+
+    /**
+     * @param \Illuminate\Http\Request $request
+     * @param \Throwable $exception
+     * @return \Symphony\Component\HttpFoundation\Response
+     * 
+     * @throws \Throwable
+     */
+
+    public function render($request,Throwable $exception){
+        if($this->isHttpException($exception)){
+            if($exception->getStatusCode()==404){
+                return response()->view('errors.404',[],404);
+            }
+        }
     }
 }

@@ -373,6 +373,16 @@ footer{
   margin-right: 5px;
 }
 
+.error-page{
+  margin: auto auto;
+  text-align: center;
+}
+
+.error-page img{
+  width: 150px;
+  height: 150px;
+}
+
 @media only screen and (max-width:1024px){
   #login{
     padding: 20px 20px;
@@ -527,6 +537,15 @@ footer{
 
   .card form .button-confirm{
     font-size: 14px;
+  }
+
+  .error-page img{
+    width: 90px;
+    height: 90px;
+  }
+
+  .error-page h1{
+    font-size: 30px;
   }
 }
 
@@ -688,6 +707,19 @@ footer{
 
   .option a span{
     font-size: 10px;
+  }
+
+  .error-page img{
+    width: 90px;
+    height: 90px;
+  }
+
+  .error-page h1{
+    font-size: 28px;
+  }
+
+  .error-page p{
+    font-size: 12px;
   }
 }
 

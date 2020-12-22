@@ -36,15 +36,13 @@ class IndexController extends Controller
         }
     }
 
-    public function syarat_ketentuan(){
-        $login = Login::where('username',$request->username)->firstOrFail();
-
+    public function syarat_ketentuan(Request $request){
+        $login = $request->session()->get('username_login');
         return view('syarat',['login' => $login]);
     }
 
-    public function kebijakan_privasi(){
-        $login = Login::where('username',$request->username)->firstOrFail();
-
+    public function kebijakan_privasi(Request $request){
+        $login = $request->session()->get('username_login');
         return view('privasi',['login' => $login]);
     }
 
@@ -69,6 +67,25 @@ class IndexController extends Controller
     public function auth(Request $request){
         $login = Login::where('username',$request->username)->firstOrFail();
         
+        if ($login  == null){
+            return redirect('/')->with('gagal','Maaf username anda tidak terdaftar');
+        }
+        elseif ($login){
+            if($login->password == $request->password){
+                session([
+                    'berhasil_login' => true,
+                    'username_login' => $login
+                ]);
+                return view('index',['login' => $login]);
+            }
+            else{
+                return redirect('/')->with('gagal','Maaf username atau password anda salah');
+            }
+        }
+        else{
+            return redirect('/')->with('gagal','Mohon username dan passwordnya untuk di isi');
+        }
+        /*
         if ($login){
             if($login->password == $request->password){
                 session([
@@ -77,8 +94,14 @@ class IndexController extends Controller
                 ]);
                 return view('index',['login' => $login]);
             }
+            else{
+                return redirect('/')->with('gagal','Maaf username atau password anda salah');
+            }
         }
-        return redirect('/')->with('gagal','Maaf username atau password anda salah');
+        else{
+            return redirect('/')->with('gagal','Maaf username anda tidak terdaftar');
+        }
+        */
     }
 
     public function logout(Request $request){
